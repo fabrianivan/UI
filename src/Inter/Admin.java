@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -41,6 +42,7 @@ class jAdmin extends JFrame implements ItemListener, ActionListener{
 	JButton btn_history = new JButton("History Transaction");
 	JButton btn_stock = new JButton("Stock");
 	JButton btn_create = new JButton("Create");
+	JButton btn_chat = new JButton("Chat Server");
 	JButton btn_delete = new JButton("Delete");
 	JButton btn_update = new JButton("Update");
 	JButton btn_signout = new JButton("Sign Out");
@@ -166,6 +168,23 @@ class jAdmin extends JFrame implements ItemListener, ActionListener{
 		  	btn_stock.addActionListener(new ActionListener() {
 	            public void actionPerformed(ActionEvent e) {
 	            	new jStock();
+	           
+	            }
+		  	});
+		  	btn_chat.addActionListener(new ActionListener() {
+	            public void actionPerformed(ActionEvent e) {
+	            	new Server();
+	            	
+	            	Client client = new Client();
+	    	        client.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    	        client.frame.setVisible(true);
+	    	        try {
+	    				client.run();
+	    			} catch (IOException e1) {
+	    				// TODO Auto-generated catch block
+	    				e1.printStackTrace();
+	    			}
+	    			
 	           
 	            }
 		  	});
@@ -380,6 +399,7 @@ class jAdmin extends JFrame implements ItemListener, ActionListener{
 			panel2.add(btn_create);
 			panel2.add(btn_delete);
 			panel2.add(btn_update);
+			panel2.add(btn_chat);
 			panel2.add(btn_signout);
 
 		setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
@@ -394,6 +414,11 @@ class jAdmin extends JFrame implements ItemListener, ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == btn_search){
 			txt_search.setText("");
+		}
+		if(e.getSource() == btn_chat){
+			
+			new Client();
+			
 		}
 		if(e.getSource() == btn_stock){
         	new jStock();	         
@@ -574,5 +599,6 @@ class jAdmin extends JFrame implements ItemListener, ActionListener{
 public class Admin{
 	public static void main(String[] args){
 		new jAdmin(); //Langsung Munculkan Frame
+		new Server();
 	}
 }

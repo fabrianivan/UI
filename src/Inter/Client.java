@@ -66,16 +66,14 @@ public class Client extends JFrame {
  				
  				textField.setEditable(false);
  				out.println(textField.getText());
- 				textField.setText("Meja 1");
+ 				
+				textField.setText("");
  				
  			}
  			
  		});
     }
-
-    /**
-     * Prompt for and return the address of the server.
-     */
+    
     
     private String getServerAddress() {
         return JOptionPane.showInputDialog(
@@ -85,7 +83,8 @@ public class Client extends JFrame {
             JOptionPane.QUESTION_MESSAGE);
     	
     }
-
+   
+    
     /**
      * Prompt for and return the desired screen name.
      */
@@ -94,6 +93,13 @@ public class Client extends JFrame {
     /**
      * Connects to the server then enters the processing loop.
      */
+    private String dapatNama() {
+        return JOptionPane.showInputDialog(
+            frame,
+            "Masukkan nama:",
+            "Nama",
+            JOptionPane.PLAIN_MESSAGE);
+    }
     void run() throws IOException {
 
         // Make connection and initialize streams
@@ -104,11 +110,12 @@ public class Client extends JFrame {
     	//String serverAddress = IP.getHostAddress().toString();
     	String serverAddress = getServerAddress();
     	
+    	
         Socket socket = new Socket(serverAddress, 9001);
         in = new BufferedReader(new InputStreamReader(
             socket.getInputStream()));
         out = new PrintWriter(socket.getOutputStream(), true);
-        String nama = "Meja 1";
+        String nama = dapatNama();
         
         // Process all messages from server, according to the protocol.
         while (true) {
