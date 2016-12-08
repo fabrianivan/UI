@@ -2,3 +2,22 @@ Anggota Kelompok:
 Deren Evan Kurniadi 535140013
 Kendi 535140007
 Fabrian Ivan Prasetya 535140042
+
+Program Kasir Restoran
+	Program ini akan menggantikan sistem kasir dimana setiap meja akan diberikan tablet yang telah memiliki program ini. Pelanggan akan diminta untuk memasukkan id dan password untuk melakukan login. Jika belum memiliki account maka pelanggan dapat mendaftarkan diri dengan mengisi form sign up. Jika salah mengisikan id maupun password maka akan messagebox yang muncul memberitahu pelanggan bahwa terdapat id atau password yang salah. Dalam sistem ini pelanggan akan memiliki saldo yang dapat di isi dengan berbicara kepada kasir utama pada setiap restoran. Kasir utama ini akan berfungsi sebagai sistem recovery password..
+
+	Pelanggan yang memiliki account akan dibawa kepada halaman pemesanan, sehingga dapat memesan makanan dan minuman yang diinginkan. Setelah itu muncul pesan dimana terdapat jumlah total harga pemesanan. Pelanggan yang ingin membayar dapat menekan tombol ok yang ditunjukan pada kasir dan stock makanan akan berkurang dalam data base.
+	Pelanggan yang lupa password dapat melakukan recovery password dengan memasukkan pin pada halaman recovery password.
+
+Kesimpulan : - Terdapat 6 halaman yang berupa
+	1. Login
+	2. Form Daftar
+	Masuk ke dalam database :nama database berupa  (User) Isi data base berupa
+	ID, Full Name, Gender , Address, Phone Number , Username , Password
+	3. Menu utama (Dibagi 2 halaman yaitu makanan dan minuman)
+	Masuk ke dalam database :nama database berupa  (Menu) Isi data base berupa
+	Code, Name, Price, Stock (Makanan dan minuman digabung dalam database yang sama)
+4. Hal_Admin (Berfungsi melakukan recovery password dan delete data pelanggan yang sudah tidak aktif dalam 3 bulan)
+	5. Halaman Transaksi (Database)
+	6. Recovery Password
+Multithreading dilakukan dengan socket berupa layanan memanggil pelayan.
