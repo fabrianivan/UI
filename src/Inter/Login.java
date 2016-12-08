@@ -31,6 +31,7 @@ class jLogin extends JFrame implements ItemListener, ActionListener{
 	JButton btn_signup = new JButton("SIGN UP");
 	JButton btn_forgot = new JButton("FORGOT");
 	JButton btn_exit = new JButton("EXIT");
+	JButton btn_admin = new JButton("ADMIN");
 	Connection conn = null;
     java.sql.ResultSet rs = null;
     java.sql.PreparedStatement ps = null;
@@ -40,7 +41,7 @@ class jLogin extends JFrame implements ItemListener, ActionListener{
     int count=0;
 	jLogin(){
 		setTitle("LOGIN");
-		setSize(280, 170);
+		setSize(340, 170);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
@@ -51,7 +52,7 @@ class jLogin extends JFrame implements ItemListener, ActionListener{
 		    	  Class.forName("com.mysql.jdbc.Driver");
 		          System.out.println("Connecting to database");
 		          conn = DriverManager.getConnection(
-		  				"jdbc:mysql://localhost:3308/kasir_restoran",
+		  				"jdbc:mysql://localhost/kasir_restoran",
 		  				"root", "");
 		          System.out.println("Connected to databse");
 		          Vector<Vector<Object>> data = null;
@@ -107,12 +108,13 @@ class jLogin extends JFrame implements ItemListener, ActionListener{
 		panelloginbtn.add(btn_forgot);
 		panelloginbtn.add(btn_signup);	
 		panelloginbtn.add(btn_exit);		
-
+		panelloginbtn.add(btn_admin);
 		
 		
 		  
 		
 		btn_ok.addActionListener(this);
+		btn_admin.addActionListener(this);
 		btn_help.addActionListener(this);
 		btn_signup.addActionListener(this);
 		btn_exit.addActionListener(this);
@@ -126,6 +128,16 @@ class jLogin extends JFrame implements ItemListener, ActionListener{
 
 	boolean bool = false;
 	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() == btn_admin) {
+			if(txt_username.getText().equals("admin")&&txt_password.getText().equals("admin"))
+			{
+				new jAdmin();
+				this.dispose();
+			}
+			
+			
+			
+		}
 		if(e.getSource() == btn_ok) {
 			 try {
 		            
@@ -136,7 +148,7 @@ class jLogin extends JFrame implements ItemListener, ActionListener{
 		                    bool = true;
 		                    Variabel.id_login=result.getString("id");
 			                System.out.println(Variabel.id_login);
-			               Variabel.nama=result.getString("username");
+			               Variabel.nama=result.getString("fullname");
 		                    System.out.print ("Login Success");
 		                    break;
 		                }
@@ -163,7 +175,7 @@ class jLogin extends JFrame implements ItemListener, ActionListener{
 	//		this.dispose();		
 			}
 		if(e.getSource() == btn_signup) {
-			JOptionPane.showMessageDialog(this, "Accepted");//Message yang muncul
+			//JOptionPane.showMessageDialog(this, "Accepted");//Message yang muncul
 			new jRegistration();
 			this.dispose();		
 			}
@@ -179,6 +191,10 @@ class jLogin extends JFrame implements ItemListener, ActionListener{
 				e1.printStackTrace();
 			}
 			}
+		if(e.getSource() == btn_forgot) {
+			new jRecovery();
+				this.dispose();		
+				}	
 		
 		if(e.getSource() == btn_exit) {
 			this.dispose();		

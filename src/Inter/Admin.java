@@ -393,19 +393,19 @@ class jAdmin extends JFrame implements ItemListener, ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == btn_search){
-			
+			txt_search.setText("");
 		}
-		if(e.getSource() == btn_refresh) {
-			JOptionPane.showMessageDialog(this, "Accepted");//Message yang muncul
-			new jLogin();
-			this.dispose();		
-			}
+		if(e.getSource() == btn_stock){
+        	new jStock();	         
+			this.dispose();	
+		}
 		if(e.getSource() == btn_signout) {
-			JOptionPane.showMessageDialog(this, "Accepted");//Message yang muncul
+			JOptionPane.showMessageDialog(this, "Logged Out");//Message yang muncul
 			new jLogin();
 			this.dispose();		
 			}
 		if(e.getSource() == btn_history) {
+			new jHistory();
 			this.dispose();		
 			}
 		
@@ -500,7 +500,13 @@ class jAdmin extends JFrame implements ItemListener, ActionListener{
             panel1.removeAll();
 		    panel1.add(scrollPane, BorderLayout.CENTER);
             panel1.revalidate();
-
+            txt_id.setText("");
+            txt_fullname.setText("");
+            txt_gender.setText("");
+            txt_address.setText("");
+            txt_phone.setText("");
+            txt_username.setText("");
+            txt_password.setText("");
             //model.addRow(new Object[]{kb1.getText(),jb1.getText(),plis1.getText(),pbit1.getText(),no_rak1.getSelectedItem().toString()});
         }
         catch(Exception f){
