@@ -165,7 +165,7 @@ class jAdmin extends JFrame implements ItemListener, ActionListener{
 		  	});
 		  	btn_stock.addActionListener(new ActionListener() {
 	            public void actionPerformed(ActionEvent e) {
-	            	new Stock();
+	            	new jStock();
 	           
 	            }
 		  	});

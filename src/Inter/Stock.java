@@ -78,7 +78,7 @@ class jStock extends JFrame implements ItemListener, ActionListener{
 	    	  Class.forName("com.mysql.jdbc.Driver");
 	          System.out.println("Connecting to database");
 	          conn = DriverManager.getConnection(
-	  				"jdbc:mysql://localhost:3312/kasir_restoran",
+	  				"jdbc:mysql://localhost:3308/kasir_restoran",
 	  				"root", "");
 	          System.out.println("Connected to databse");
 	        

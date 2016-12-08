@@ -261,6 +261,7 @@ class jHistory  extends JFrame implements ItemListener, ActionListener{
 			new jAdmin();
 			this.dispose();		
 			}
+		
 		if(e.getSource() == btn_refresh) {
 				  		  
 			}
