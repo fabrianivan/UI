@@ -240,7 +240,7 @@ class jHistory  extends JFrame implements ItemListener, ActionListener{
                 panel1.removeAll();
     		    panel1.add(scrollPane, BorderLayout.CENTER);
                 panel1.revalidate();
-            	JOptionPane.showMessageDialog(panel2, "Sucess");
+            	JOptionPane.showMessageDialog(panel2, "Success");
             }
             catch(Exception j){
             	JOptionPane.showMessageDialog(panel2, "Maaf, barang tidak terdapat dalam database");//Message yang muncul
@@ -263,7 +263,32 @@ class jHistory  extends JFrame implements ItemListener, ActionListener{
 			}
 		
 		if(e.getSource() == btn_refresh) {
-				  		  
+			Vector<Vector<Object>> data = null;
+            Vector<Object> columnNames = new Vector<Object>();
+            columnNames.add("Nomor Seri");
+		     	columnNames.add("Barang");
+		     	columnNames.add("Jumlah");
+		     	columnNames.add("Satuan");
+		      	columnNames.add("Harga");
+		
+		      	
+
+            try {
+            	 DBkasir db = new DBkasir();
+                data = db.selectHISTORY();
+            }
+            catch (Exception r) {
+                r.printStackTrace();
+            }
+
+            // Create JTable and fill it with data
+            table = new JTable(data, columnNames);
+            JScrollPane scrollPane = new JScrollPane(table);
+            table.setFillsViewportHeight(true);
+            table.setEnabled(false);
+            panel1.removeAll();
+		    panel1.add(scrollPane, BorderLayout.CENTER);
+            panel1.revalidate();	  
 			}
 		if(e.getSource() == btn_search) {
 			 {
