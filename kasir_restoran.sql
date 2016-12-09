@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 09, 2016 at 03:01 AM
+-- Generation Time: Dec 09, 2016 at 03:12 AM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 7.0.13
 
@@ -40,7 +40,13 @@ CREATE TABLE `history` (
 
 INSERT INTO `history` (`no_pembelian`, `barang`, `jumlah`, `satuan`, `harga`) VALUES
 (1, 'Spicy', 1, 28000, 28000),
-(2, 'Spicy', 1, 28000, 28000);
+(2, 'Spicy', 1, 28000, 28000),
+(3, 'SteakCheese', 1, 35000, 35000),
+(4, 'SubwayClub', 1, 40000, 40000),
+(5, 'SubwayClub with Avocado', 1, 28000, 28000),
+(6, 'Subway Melt', 1, 33000, 33000),
+(7, 'JOHN COLLIAS', 1, 21000, 21000),
+(8, 'LONG ISLAND ICED TEA', 1, 15000, 15000);
 
 -- --------------------------------------------------------
 
@@ -61,7 +67,7 @@ CREATE TABLE `menu` (
 
 INSERT INTO `menu` (`code`, `name`, `price`, `stock`) VALUES
 ('1', 'Spicy', 28000, 298),
-('2', 'SteakCHeese', 35000, 328),
+('2', 'SteakCheese', 35000, 328),
 ('3', 'SubwayClub', 40000, 329),
 ('4', 'SubwayClub Avocado', 28000, 329),
 ('5', 'Subway Melt', 33000, 329),
@@ -149,7 +155,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `history`
 --
 ALTER TABLE `history`
-  MODIFY `no_pembelian` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `no_pembelian` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `order_menu`
 --
