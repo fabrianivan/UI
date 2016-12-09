@@ -129,14 +129,15 @@ class jLogin extends JFrame implements ItemListener, ActionListener{
 	boolean bool = false;
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == btn_admin) {
-			if(txt_username.getText().equals("admin")  && txt_password.getPassword().equals("admin"))
+			if(txt_username.getText().equals("admin")&&txt_password.getText().equals("admin"))
 			{
 				new jAdmin();
 				this.dispose();
 			}
-		
+			
+			
+			
 		}
-		
 		if(e.getSource() == btn_ok) {
 			 try {
 		            
