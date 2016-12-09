@@ -114,7 +114,7 @@ public class Server {
                     for (PrintWriter writer : writers) {
                     	
                     	//writer.println("MESSAGE " + "Meja 1 Memanggil Pelayan");
-                    	writer.println("MESSAGE " + name + ": " + input);
+                    	writer.println("MESSAGE " + name + ": " + "Memanggil pelayan");
                     	//writer.println("MESSAGE " + name + ": " + "Memanggil Pelayan");
                     }
                 }

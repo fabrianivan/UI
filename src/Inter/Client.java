@@ -22,14 +22,14 @@ public class Client extends JFrame {
 
     BufferedReader in;
     PrintWriter out;
-    JFrame frame = new JFrame("Chatter");
+    JFrame frame = new JFrame("Panggil pelayan");
     JTextField textField = new JTextField(40);
     JTextArea messageArea = new JTextArea(8, 40);
    // JButton label = new JButton("Panggil pelayan");
    
 
     Client() {
-    	
+    	Variabel.nama="Meja 1";
         //JFrame frame = new JFrame("Chatter");
         
         JButton label = new JButton("Panggil pelayan");
@@ -61,13 +61,13 @@ public class Client extends JFrame {
         label.addActionListener(new ActionListener(){
  			public void actionPerformed(ActionEvent e){
  				label.setText("Waiting");
- 				textField.setText("Memanggil pelayan");
+ 				textField.setText("menaggil pelayan");
  				JOptionPane.showMessageDialog(frame,  "Pelayan akan datang");
  				
  				textField.setEditable(false);
  				out.println(textField.getText());
  				
-				textField.setText("");
+				textField.setText("Memanggi pelayan");
  				
  			}
  			
@@ -115,7 +115,7 @@ public class Client extends JFrame {
         in = new BufferedReader(new InputStreamReader(
             socket.getInputStream()));
         out = new PrintWriter(socket.getOutputStream(), true);
-        String nama = dapatNama();
+        String nama = "Meja 2";
         
         // Process all messages from server, according to the protocol.
         while (true) {
