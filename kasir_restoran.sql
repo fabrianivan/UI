@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 09, 2016 at 01:54 AM
+-- Generation Time: Dec 09, 2016 at 03:01 AM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 7.0.13
 
@@ -105,7 +105,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `fullname`, `gender`, `address`, `phone`, `username`, `password`) VALUES
-(1, 'Deren', 'Male', 'Jalan Maram', 9200090, 'deren', 'ldkpadk'),
+(1, 'Deren', 'Male', 'Jalan Maram', 9200090, 'deren', '1234'),
 (2, 'Kendi', 'Male', 'Jalan S Parman 1', 90931131, 'kendi.unyu', 'kokpfkad'),
 (3, 'lmmqljlj', 'Male', 'i0i00', 909093, '1212121', '009021'),
 (4, 'rqrr', 'rwrw', '5', 6, '7', '8'),
